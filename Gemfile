@@ -10,6 +10,11 @@ gem 'devise'
 # rack-based asset packaging system bc running rails in api-only mode but Active Admin requires assets
 gem 'sprockets', '<4'
 gem 'sass'
+
+# for seeding the database
+gem 'faker', '~> 2.20'
+gem 'fabrication', '~> 2.28'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
 # Use Puma as the app server

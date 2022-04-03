@@ -86,6 +86,9 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    fabrication (2.28.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
@@ -212,6 +215,8 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   devise
+  fabrication (~> 2.28)
+  faker (~> 2.20)
   listen (~> 3.3)
   pg
   puma (~> 5.0)
