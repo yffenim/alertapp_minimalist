@@ -1,4 +1,4 @@
-class AlertsController < ApplicationController
+class AlertsController < ApiController
   before_action :set_alert, only: [:show, :update, :destroy]
 
   # GET /alerts

@@ -11,9 +11,11 @@ gem 'devise'
 gem 'sprockets', '<4'
 gem 'sass'
 
-# for seeding the database
+# for seeding and testing
 gem 'faker', '~> 2.20'
 gem 'fabrication', '~> 2.28'
+gem 'rspec'
+gem 'capybara' # integration testing for whole stack include assets
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
