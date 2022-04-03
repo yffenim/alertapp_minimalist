@@ -1,20 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
+// 2. Top Level Component importing routes
 
-class App extends Component {
-  componentDidMount() {
-    window.fetch('/api/alerts')
-      .then(response => response.json())
-      .then(json => console.log(json))
-      .catch(error => console.log(error));
-  }
+import React from 'react';
+import Routes from './routes';
 
-  render() {
-  return (
-    <div className="App">
-      <h1> Hello world! </h1>
-    </div>
-  );
-}
-}
-export default App;
+export default () => <>{Routes}</>;
+

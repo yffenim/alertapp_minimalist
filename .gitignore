@@ -34,3 +34,12 @@
 # Place files for /public in /client/public
 /public
 
+# Ignore the create-react-app node modules
+/node_modules
+
+# Ignore log files
+/log
+
+# Ignore yarn.lock
+/yarn.lock
+
