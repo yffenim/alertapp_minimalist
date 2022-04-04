@@ -14,8 +14,10 @@ gem 'sass'
 # for seeding and testing
 gem 'faker', '~> 2.20'
 gem 'fabrication', '~> 2.28'
-gem 'rspec'
+gem 'rspec-rails'
 gem 'capybara' # integration testing for whole stack include assets
+gem 'factory_bot_rails' # replaces fixtures w/ easy syntax and multiple build strategies
+gem 'webdrivers'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
@@ -56,3 +58,4 @@ group :production do
   # Use postgres as the database for production bc heroku does not accept sqlite
   gem 'pg'
 end
+
