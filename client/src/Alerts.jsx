@@ -1,12 +1,12 @@
 import React from "react"
-import ReactDOM from 'react-dom'
 import { Table, message, Popconfirm } from "antd"
 import { Button, Form, Input, Modal, Select } from "antd"
-// for parsing the ISO-8601 date into readable format
-import moment from "moment"
+import moment from "moment" // for parsing the ISO-8601 date into readable format
 
 // CSRF token needed for multiple functions
 // var token = document.querySelector('meta[name="csrf-token"]').content;
+
+
 
 class Alerts extends React.Component {
   // for the edit form inside of the edit modal - do I need this?
@@ -24,14 +24,6 @@ class Alerts extends React.Component {
   componentDidMount = () => {
     this.getAlerts();
   }
-
-//  componentDidUpdate = (prevProps, prevState) => {
-//    console.log("inside DidUpdate!");
-//    if (prevState.alerts != this.state.alerts) {
-//    this.setState({ alerts: [] });
-//    this.getAlerts();
-//    }
-//  }
 
 // would it be better to do this with DidUpdate?
 // This wil update the alerts array and the count anytime state changes
@@ -87,6 +79,7 @@ class Alerts extends React.Component {
 
 // Delete request to delete Alert
   deleteAlert = (id) => {
+    console.log("inside delete!")    
     const url = '/alerts/' + id
 // const token = document.querySelector('meta[name="csrf-token"]').content;
     console.log(url);
@@ -161,8 +154,9 @@ class Alerts extends React.Component {
   handleSubmit = (event) => {
 		//let post_url = "https://posthere.io/98d3-48ec-9176";
     event.preventDefault();
+    console.log("inside handle submit!");
     let alert_level = event.target[0].value;
-    fetch(('/alerts/create'), {      
+    fetch(('/api/alerts'), {      
       method: 'POST',    
       headers: {
         'Content-Type': 'application/json',
@@ -172,7 +166,7 @@ class Alerts extends React.Component {
       body: JSON.stringify({
         alert: {
           level: alert_level,
-					user_id: 41, // Ada
+          user_id: 1,
           }
         })
       })
@@ -194,7 +188,11 @@ class Alerts extends React.Component {
     console.log(dateComponent);
     console.log(timeComponent);
     return dateComponent
-    }
+  }
+  
+  testClick = (event) => {
+    console.log("clicked");
+  }
 
 // table data
   columns = [
@@ -244,7 +242,7 @@ class Alerts extends React.Component {
 	];
 
   render() {
-    const { alerts } = this.state;
+    // const { alerts } = this.state;
     // console.log("alerts array from render function:")
     // alerts && console.log(this.state.alerts)
  //   const str = "2022-03-25T23:08:46.169Z"
@@ -254,6 +252,8 @@ class Alerts extends React.Component {
     
     return (
       <div>
+        <h1>Test Button</h1><button onClick={this.testClick}>Click!</button>
+
         <h1>Total Alerts: {this.state.count}</h1>
         <h1>Add An Alert: </h1>
         <form onSubmit={this.handleSubmit}>

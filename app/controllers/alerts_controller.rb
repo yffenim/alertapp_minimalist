@@ -6,6 +6,7 @@ class AlertsController < ApiController
     @alerts = Alert.all
 
     render json: @alerts
+    # render json: @alerts { status: 200 }
   end
 
   # GET /alerts/1
@@ -46,6 +47,6 @@ class AlertsController < ApiController
 
     # Only allow a list of trusted parameters through.
     def alert_params
-      params.require(:alert).permit(:level)
+      params.require(:alert).permit(:level,:user_id)
     end
 end

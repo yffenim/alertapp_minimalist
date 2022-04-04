@@ -16,21 +16,21 @@ User.destroy_all
 
 # I am aware that this is not DRY
 
-ada = User.new(email: 'ada@email.com', password: 'password')
+ada = User.new(email: 'ada@email.com', password: 'password', id: 1)
 ada.save!
 
-buffy = User.new(email: 'buffy@email.com', password: 'password')
-buffy.save!
+# buffy = User.new(email: 'buffy@email.com', password: 'password')
+# buffy.save!
 
-5.times do 
+3.times do 
   alert = Alert.new(level: rand(0..10), user_id: ada.id)
   alert.save!
 end
 
-5.times do
-  alert = Alert.new(level: rand(0..10), user_id: buffy.id)
-  alert.save!
-end
+#5.times do
+#  alert = Alert.new(level: rand(0..10), user_id: buffy.id)
+#  alert.save!
+#end
 
 #Fabricator(:user) do 
 #  email { Faker::Internet.email }
